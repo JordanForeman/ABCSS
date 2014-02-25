@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>ABCSS</title>
+		<meta charset="utf-8"> 
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+		<link rel="stylesheet" href="css/screen.css" />
+
+		<link rel="stylesheet" href="css/prism.css" />
+		<script type="text/javascript" src="js/prism.js"></script>
+
+		<link rel="stylesheet" href="js/flexslider/flexslider.css" />
+		<script type="text/javascript" src="js/flexslider/jquery.flexslider-min.js"></script>
+
+		<script type="text/javascript" src="js/main.js"></script>
+	</head>
+
+	<body>
+
+		<header>
+
+			<div class="logo">
+				ABCSS
+			</div>
+
+			<div class="user-controls">
+				<ul class="user-nav">
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+
+			<nav>
+				<ul class="nav">
+					<li>
+						<a href="index.html">
+							<i class="icon-home"></i>
+							<span>Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="plans.html">
+							<i class="icon-trophy"></i>
+							<span>Premium</span>
+						</a>
+					</li>
+					<li>
+						<a href="bookshelf.html">
+							<i class="icon-books"></i>
+							<span>Bookshelf</span>
+						</a>
+					</li>
+					<li>
+						<a href="archive.html">
+							<i class="icon-bookmarks"></i>
+							<span>Archive</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="container article">
+
+			<article>
+
+				<h1>What is HTML? <small>by Jordan Foreman</small></h1>
+
+<p>What is HTML exactly? If you’ve been interested in learning website design for any amount of time, you’ve probably heard the word thrown around quite a bit already. HTML stands for HyperText Markup Language, and is a computer language that defines the <em>content</em> of our web sites.</p>
+<p>Content is anything that a user can see and interact with - this includes things like text, buttons, links, images, etc. We use HTML to establish a hierarchy of these content <em>elements</em>. We’ll discuss the importance of a <em>semantic HTML</em> hierarchy in later chapters - for now, just remember that HTML defines the <strong>what</strong> of our web pages.</p>
+<h2>Getting Started</h2>
+<p>Hopefully at this point you’re asking yourself, “But how do I <em>use</em> HTML?”. The answer may surprise you, as actually using HTML is incredibly easy! All you’ll need now is a generic text editor. If you’re on a Windows computer, Notepad works fine. OS X users will want to use TextEdit. Open one of those programs now.</p>
+<p><strong>Note: </strong>While both of these programs are great for getting started, there are literally hundreds of text editing applications that are intended for writing website code. An industry favorite is <a href="http://sublimetext.com">Sublime Text</a>, which is available on both Windows and Mac. I cannot recommend it enough.</p>
+<p>With your text editor of choice open, go ahead and type the following (you can copy+paste, but manually typing out everything will make the concepts stick so much quicker):</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>That’s not a whole lot of code right? Lets walk through it and discuss what it does:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;</code></pre>
+<p>This line is used by the browser (Internet Explorer, Safari, Chrome, etc.) to determine what rendering mode to display your page in. We won’t go into detail about the different rendering modes quite yet, just remember that moving forward all of your pages should have <code  class="language-html">&lt;!DOCTYPE html&gt;</code> as the very first line.</p>
+<pre><code class="language-html">&lt;html lang=”en”&gt;
+  ...
+&lt;/html&gt;</code></pre>
+<p>This is the HTML <em>root element</em> of your web page. All elements in your HTML document will be written in a similar fashion. We begin by <em>opening</em> our root element with <code  class="language-html">&lt;html lang=”en”&gt;</code>, and closing it with <code>&lt;/html&gt;</code>. Lets shift gears and discuss the structure of these elements.</p>
+<h2>Element Structure</h2>
+<p>Everything in an HTML document is called an element. Elements correlate to the <em>content</em> that we discussed earlier in this chapter - links, images, text, buttons, etc. Elements have the following structure:</p>
+<pre><code  class="language-html">&lt;a href=&quot;home.html&quot;&gt;Home&lt;/a&gt;</code></pre>
+<p>That was an <em>anchor</em> element. An anchor is just a fancy term for something that will direct the browser to a different location when they are clicked on.</p>
+<p>Notice how the anchor is written a lot like the <code>&lt;html&gt;</code> element above. Again, all elements are written the same way: They have an <em>opening</em> - <code>&lt;a&gt;</code> - and a <em>closing</em> - <code>&lt;/a&gt;</code> tag that tells us what type of element we’re working with, and then some contents in the middle.</p>
+<p>In the case of an anchor element, the text content in the middle is what will be what is displayed as a link. <a href="http://example.com">This is a link</a>.</p>
+<p>But what about that <code>href=”home.html”</code> part? This is what is known as an element <em>property</em>. Think of a property as anything that is special about any specific element. We set properties by saying <code>property=”value”</code> inside of the element’s opening tag. Different types of elements have different properties for you to customize. In the case of <code>&lt;a&gt;</code> elements, <code>href</code> is the most important - it determines <strong>where</strong> the user will be navigated to when they click on that link. In our example above, when a user clicks the linked text “Home”, their browser will be told to go load a “home.html” page.</p>
+<p>Elements can also contain other elements: Suppose you had a paragraph of text with several links and an image inside of it? Here’s how that would look:</p>
+<pre><code>&lt;p&gt;
+  Here is a bunch of text that I just typed up! 
+  Click here for the home page: &lt;a href=&quot;home.html&quot;&gt;home page&lt;/a&gt;!
+  &lt;img src=&quot;images/my_image.jpg&quot;&gt;
+&lt;/p&gt;</code></pre>
+<p>You’ll notice a couple of new elements in the example above. <code>&lt;p&gt;</code> and <code>&lt;img&gt;</code>. A <code>&lt;p&gt;</code> element is a <em>paragraph</em>. Paragraphs are blocks of text content, similar to what you’re reading now - but you probably already knew that.</p>
+<p><code>&lt;img&gt;</code> elements are images that will be displayed on your page. This could be a snapshot of your dog or even a photo from that trip to France you took last year. Images also have a <code>src</code> property. This property tells the page where to look to find the image file to display. We’ll go into more depth on that and the <code>href</code> property in another chaper.</p>
+<p>You’ll also notice that we don’t ever close an <code>&lt;img&gt;</code> element. Because images won’t ever contain another HTML element or text, they are allowed to close themselves. There are a handful of other elements that also don’t require closing tags. These are called <em>self-closing</em> elements. We’ll get to those later.</p>
+<h2>Putting it all Together</h2>
+<p>Lets take a step back and look at our HTML document again:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Hopefully now this makes a bit more sense; First, we have an HTML element with a <code>lang</code> attribute set to <code>en</code>. This tells the browser that our HTML document is an english language document.</p>
+<p><em>Inside</em> of our HTML, we have both a <code>&lt;head&gt;</code> and a <code>&lt;body&gt;</code> element, and our <code>&lt;head&gt;</code> contains a <code>&lt;title&gt;</code>, and that <code>&lt;title&gt;</code> contains the text “My First Website”.</p>
+<p>That wasn’t so bad was it? If you’re still having a hard time following, don’t worry! HTML is ugly to read, and getting comfortable with all of the vocabulary will come with time.</p>
+<p>In the next chapter, we’ll save this file and begin working on creating our first website! Cheers!</p>
+
+			</article>
+
+			<hr>
+
+			<footer>
+				ABCSS &copy; 2014 <a target="_blank" href="http://JordanForeman.com">Jordan Foreman</a> and <a target="_blank" href="http://BetterThanGreat.co">Better Than Great LLC</a> -
+				<a href="attribution.html">Additional Attribution</a>
+			</footer>
+
+		</div>
+
+	</body>
+</html>
